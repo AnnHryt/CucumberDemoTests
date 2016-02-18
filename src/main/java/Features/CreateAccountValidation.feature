@@ -1,4 +1,4 @@
-@run
+#@run
 Feature: Create Account details validation
 
   In order to ensure that a user provided required and properly formatted information for account creation

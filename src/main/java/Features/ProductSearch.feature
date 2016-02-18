@@ -1,4 +1,4 @@
-#@run
+@run
 Feature: Product search
 
   Scenario: All Departments Product search
