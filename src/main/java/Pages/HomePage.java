@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class HomePage extends BasePage {
 
-    protected static final String title="Walmart.com: Save money. Live better.";
+    protected static final String pageTitle="Walmart.com: Save money. Live better.";
 
     @FindBy(how = How.ID, using = "search")
     private WebElement searchField;
@@ -26,8 +26,18 @@ public class HomePage extends BasePage {
         PageFactory.initElements(WebDriverHolder.getDriver(), this);
     }
 
+    @Override
+    public String getPageTitle() {
+        return pageTitle;
+    }
+
+    @Override
+    public String getCurrentPageUrl() {
+        return super.getCurrentPageUrl();
+    }
+
     public void isLoaded() {
-        assertTrue(WebDriverHolder.getDriver().getTitle().equals(title));
+        assertTrue(WebDriverHolder.getDriver().getTitle().equals(pageTitle));
     }
 
     public void openHomePage() {

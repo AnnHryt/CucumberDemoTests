@@ -57,14 +57,19 @@ public class CreateAccountPage extends BasePage{
     }
 
     @Override
-    public String getUrl() {
+    public String getPageURL() {
         return baseURL+pageURL;
+    }
+
+    @Override
+    public String getPageTitle() {
+        return pageTitle;
     }
 
     @Override
     public boolean isCurrent() {
         String actual = WebDriverHolder.getDriver().getCurrentUrl();
-        String expected = getUrl();
+        String expected = getPageURL();
         if(actual.equals(expected))
             return true;
         else return false;

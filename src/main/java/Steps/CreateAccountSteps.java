@@ -22,7 +22,6 @@ public class CreateAccountSteps {
     @Given("^I want to create a new user account$")
     public void i_want_to_create_a_new_user_account()  {
         createAccountPage.openCreateAccountPage();
-        assertThat(createAccountPage.isCurrent(), is(true));
     }
 
     @Given("^I enter \"(.*?)\" as my first name$")
@@ -58,7 +57,8 @@ public class CreateAccountSteps {
 
     @Then("^user account is not created$")
     public void user_account_is_not_created() {
-        assertThat(true, is(createAccountPage.isCurrent()));
+        assertThat(true, is(createAccountPage.isCurrentByTitle()));
+        assertThat(true, is(createAccountPage.isCurrentByURL()));
     }
 
     @Then("^I see a message \"(.*?)\" informing me to enter the correct first name$")
