@@ -1,4 +1,4 @@
-#@run
+@run
 Feature: Wish lists
 
   In order to

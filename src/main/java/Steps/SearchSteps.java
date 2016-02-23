@@ -21,7 +21,7 @@ public class SearchSteps {
 
     @Given("^I am on the Home page$")
     public void i_am_on_the_Home_page() throws Throwable {
-        homePage.openHomePage();
+        homePage.open();
     }
 
     @Given("^I select \"(.*?)\" search$")

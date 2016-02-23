@@ -37,6 +37,7 @@ public class WishListFragment extends BaseFragment {
     public void enterWishListName(String wlName)
     {
         WebDriverHolder.getDriver().switchTo().frame(rootElement);
+        wait.waitForAWhile(2000);
         WebElement wishListName =getElementWishListName();
         wishListName.sendKeys(wlName);
         WebDriverHolder.getDriver().switchTo().defaultContent();
@@ -70,6 +71,7 @@ public class WishListFragment extends BaseFragment {
 
     private List<WebElement> getExistingWishLists()
     {
+        wait.waitForAWhile(2000);
         List<WebElement> existingWishLists = WebDriverHolder.getDriver().findElements(createdWishLists);
         return existingWishLists;
     }

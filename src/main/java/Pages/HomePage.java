@@ -21,28 +21,18 @@ public class HomePage extends BasePage {
     {
         init();
     }
-    @Override
-    public void init() {
-        PageFactory.initElements(WebDriverHolder.getDriver(), this);
-    }
+//    @Override
+//    public void init() {
+//        PageFactory.initElements(WebDriverHolder.getDriver(), this);
+//    }
 
     @Override
     public String getPageTitle() {
         return pageTitle;
     }
 
-    @Override
-    public String getCurrentPageUrl() {
-        return super.getCurrentPageUrl();
-    }
-
     public void isLoaded() {
         assertTrue(WebDriverHolder.getDriver().getTitle().equals(pageTitle));
-    }
-
-    public void openHomePage() {
-        WebDriverHolder.getDriver().get(baseURL);
-        WebDriverHolder.getDriver().manage().window().maximize();
     }
 
     public Search Search() {

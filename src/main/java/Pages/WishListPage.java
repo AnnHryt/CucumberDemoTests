@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class WishListPage extends BasePage {
 
-    private static final String pageURL = "lists/manage-wish-list-items?id=";
+    private String pageURL = "lists/manage-wish-list-items?id=";
     //protected String pageTitle = "Walmart Wish Lists - Walmart.com";
 
     @FindBy(how = How.CSS, using = ".heading-c")
@@ -25,6 +25,11 @@ public class WishListPage extends BasePage {
     public WishListPage() {
         init();
     }
+   // @Override
+//    public String getPageURL() {
+//        //TBD:  pageURL depends on id of the created wish list
+//        return baseURL+pageURL;
+//    }
 
     public boolean isWishListNameDisplayed(String wlName) {
         wait.waitForElementToAppear(wishListName);

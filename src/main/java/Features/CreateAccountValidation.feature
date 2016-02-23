@@ -1,4 +1,4 @@
-#@run
+@run
 Feature: Create Account details validation
 
   In order to ensure that a user provided required and properly formatted information for account creation
@@ -19,21 +19,21 @@ Feature: Create Account details validation
     Examples:
       | Email                                                                   |
       | test                                                                    |
-      | test@.com                                                               |
-      | test@gmail.                                                             |
-      | test.test.com                                                           |
-      | test@                                                                   |
-      | A@b@c@test.com                                                          |
-      | a"b(c),e@test.com                                                       |
-      | a"bbb"ccc@test.com                                                      |
-      | test test@test.org                                                      |
-      | test\ test@test.org                                                     |
-      | test\"test@test.org                                                     |
-      | abc@test..com                                                           |
-      | ab..c@test.com                                                          |
-      | test@.gmail.com                                                         |
-      | .test@gmail.com                                                         |
-      | 71symbolInvalidEmail71symbolInvalidEmail71symbolInvalidEmail7@gmail.com |
+#      | test@.com                                                               |
+#      | test@gmail.                                                             |
+#      | test.test.com                                                           |
+#      | test@                                                                   |
+#      | A@b@c@test.com                                                          |
+#      | a"b(c),e@test.com                                                       |
+#      | a"bbb"ccc@test.com                                                      |
+#      | test test@test.org                                                      |
+#      | test\ test@test.org                                                     |
+#      | test\"test@test.org                                                     |
+#      | abc@test..com                                                           |
+#      | ab..c@test.com                                                          |
+#      | test@.gmail.com                                                         |
+#      | .test@gmail.com                                                         |
+#      | 71symbolInvalidEmail71symbolInvalidEmail71symbolInvalidEmail7@gmail.com |
 
     #First name and Last name - alphanumeric, between 1 and 25 characters
     #First and last names may include symbols -/''. only as part of alphanumeric name
@@ -52,14 +52,14 @@ Feature: Create Account details validation
     Examples:
       | First name                 | Last name                  |
       | John@#$                    | S$mi32th';                 |
-      | 1234                       | 1234                       |
-      | !@#$%^&*()_+               | !@#$%^&*()_+               |
-      | -                          | ''                         |
-      | '                          | -                          |
-      | .                          | .                          |
-      | /                          | /                          |
-      | /.'-                       | /.'-                       |
-      | JohnS1234567890qwertyuiopa | JohnS1234567890qwertyuiopa |
+#      | 1234                       | 1234                       |
+#      | !@#$%^&*()_+               | !@#$%^&*()_+               |
+#      | -                          | ''                         |
+#      | '                          | -                          |
+#      | .                          | .                          |
+#      | /                          | /                          |
+#      | /.'-                       | /.'-                       |
+#      | JohnS1234567890qwertyuiopa | JohnS1234567890qwertyuiopa |
 
 
   Scenario Outline: User enters the password which does not match password requirements

@@ -22,10 +22,10 @@ public class Search extends BasePage{
         init();
     }
 
-    @Override
-    public void init() {
-        PageFactory.initElements(WebDriverHolder.getDriver(), this);
-    }
+//    @Override
+//    public void init() {
+//        PageFactory.initElements(WebDriverHolder.getDriver(), this);
+//    }
 
     public SearchResults searchFor(String query)
     {
