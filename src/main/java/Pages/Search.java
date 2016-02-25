@@ -1,10 +1,8 @@
 package Pages;
 
-import Utils.WebDriverHolder;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by anastasiyahrytsyuk on 2/17/16.
@@ -21,11 +19,6 @@ public class Search extends BasePage{
     {
         init();
     }
-
-//    @Override
-//    public void init() {
-//        PageFactory.initElements(WebDriverHolder.getDriver(), this);
-//    }
 
     public SearchResults searchFor(String query)
     {

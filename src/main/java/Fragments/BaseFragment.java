@@ -1,6 +1,7 @@
 package Fragments;
 
 import Utils.WebDriverHolder;
+import Utils.WebDriverUtils;
 import Utils.WebElementWait;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,7 +14,8 @@ public abstract class BaseFragment {
         initFragment();
 
     }
-    public WebElementWait wait=new WebElementWait();
+    public WebElementWait wait = new WebElementWait();
+    public WebDriverUtils utils = new WebDriverUtils();
     public void initFragment() {
         PageFactory.initElements(WebDriverHolder.getDriver(), this);
     }

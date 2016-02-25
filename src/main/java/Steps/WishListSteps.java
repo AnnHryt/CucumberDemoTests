@@ -19,14 +19,11 @@ public class WishListSteps extends BaseSteps {
 
     @Given("^I am a web site visitor$")
     public void i_am_a_web_site_visitor(){
-
     }
 
     @Given("^I want to create a wish list$")
     public void i_want_to_create_a_wish_list(){
         createWishListPage.open();
-        //assertThat(createWishListPage.isCurrent(), is(true));
-
     }
 
     @When("^I enter a wish list name \"(.*?)\"$")

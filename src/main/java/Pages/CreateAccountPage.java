@@ -66,27 +66,7 @@ public class CreateAccountPage extends BasePage{
         return pageTitle;
     }
 
-//    @Override
-//    public boolean isCurrent() {
-//        String actual = WebDriverHolder.getDriver().getCurrentUrl();
-//        String expected = getPageURL();
-//        if(actual.equals(expected))
-//            return true;
-//        else return false;
-//    }
-
-//    @Override
-//    public void init() {
-//        PageFactory.initElements(WebDriverHolder.getDriver(), this);
-//    }
-
-//    public void openCreateAccountPage() {
-//        WebDriverHolder.getDriver().get(getPageURL());
-//        WebDriverHolder.getDriver().manage().window().maximize();
-//    }
-
     public void enterFirstName(String firstName)
-
     {
         this.firstName.clear();
         this.firstName.sendKeys(firstName);

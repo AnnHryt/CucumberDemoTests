@@ -2,12 +2,6 @@ package Pages;
 
 import Fragments.WishListFragment;
 import Utils.WebDriverHolder;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-
-import java.util.List;
 
 /**
  * Created by anastasiyahrytsyuk on 2/18/16.
@@ -33,10 +27,16 @@ public class CreateWishListPage extends BasePage {
         return baseURL+pageURL;
     }
 
+    @Override
+    public void open() {
+        WebDriverHolder.getDriver().get(getPageURL());
+        WebDriverHolder.getDriver().manage().window().maximize();
+        wishListFragment.waitForShown();
+    }
+
     public void enterWishListName(String wlName)
     {
         wishListFragment.enterWishListName(wlName);
-
     }
 
     public void selectWishListTheme(String wlTheme)

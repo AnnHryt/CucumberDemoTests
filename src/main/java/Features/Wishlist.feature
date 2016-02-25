@@ -1,10 +1,6 @@
 @run
 Feature: Wish lists
 
-  In order to
-  As a store owner
-  I want
-
   Scenario: Web site visitor creates a wish list
     Given I am a web site visitor
     And I want to create a wish list

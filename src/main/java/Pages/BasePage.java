@@ -16,11 +16,10 @@ public abstract class BasePage {
     protected static final String baseURL="http://www.walmart.com/";
     private String pageTitle =
             "Walmart.com: Save money. Live better.";
-
     private static final String HTTPS = "https://";
-    public static final int PAGE_LOADING_TIMEOUT = 60;
 
     public WebElementWait wait=new WebElementWait();
+
     public BasePage() {
         init();
     }
@@ -32,6 +31,15 @@ public abstract class BasePage {
     public String getPageTitle() {
         return pageTitle;
     }
+    public  String getPageURL() {
+        return baseURL;
+    }
+
+    public void open()
+    {
+        WebDriverHolder.getDriver().get(getPageURL());
+        WebDriverHolder.getDriver().manage().window().maximize();
+    }
 
     public boolean isCurrent() {
         return (this.isCurrentByURL() && this.isCurrentByTitle());
@@ -40,6 +48,12 @@ public abstract class BasePage {
     public boolean isCurrentByURL() {
         String actual = getCurrentPageUrl();
         String expected = getPageURL();
+        //compare ignoring https
+        if(actual.startsWith(HTTPS))
+        {
+            actual=actual.substring(8);
+            expected=expected.substring(7);
+        }
         if (actual.equals(expected))
             return true;
         return false;
@@ -56,31 +70,15 @@ public abstract class BasePage {
     public String getCurrentPageUrl() {
         return WebDriverHolder.getDriver().getCurrentUrl();
     }
-    public boolean isSecure() {
-        return getCurrentPageUrl().startsWith(HTTPS);
-    }
 
     public String getCurrentPageTitle() {
         return WebDriverHolder.getDriver().getTitle();
-    }
-
-    public void open()
-    {
-        WebDriverHolder.getDriver().get(getPageURL());
-        WebDriverHolder.getDriver().manage().window().maximize();
-    }
-
-    public  String getPageURL() {
-        return baseURL;
     }
 
     public void refresh() {
         WebDriverHolder.getDriver().navigate().refresh();
     }
 
-    protected int getTimeout() {
-        return PAGE_LOADING_TIMEOUT;
-    }
 }
 
 

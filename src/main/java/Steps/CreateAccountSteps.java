@@ -57,8 +57,7 @@ public class CreateAccountSteps {
 
     @Then("^user account is not created$")
     public void user_account_is_not_created() {
-        assertThat(true, is(createAccountPage.isCurrentByTitle()));
-        //assertThat(true, is(createAccountPage.isCurrentByURL()));
+        assertThat(true, is(createAccountPage.isCurrent()));
     }
 
     @Then("^I see a message \"(.*?)\" informing me to enter the correct first name$")
