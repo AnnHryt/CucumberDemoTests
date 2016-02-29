@@ -5,13 +5,17 @@ import Utils.WebDriverHolder;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.hamcrest.Matcher;
 import sun.security.util.PendingException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
+
 /**
  * Created by anastasiyahrytsyuk on 2/17/16.
  */
@@ -40,6 +44,8 @@ public class SearchSteps {
     @Then("^I see the list of corresponding search results for product for \"(.*?)\"$")
     public void i_see_the_list_of_corresponding_search_results_for_product_for(String product) throws Throwable {
         assertThat(true, is(list.get(0).contains(product)));
-        assertThat(20, is(list.size()));
+        assertThat(list, hasSize(20));
     }
+
+
 }
